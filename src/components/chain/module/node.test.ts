@@ -1,14 +1,14 @@
 import { createNode } from './node';
 
 describe('node', () => {
-  it('createNode', () => {
+  it('create node', () => {
     const node = createNode(1);
     expect(node.gender).toBe(1);
     expect(node.parentNodes).toEqual([]);
     expect(node.childNodes).toEqual([]);
   });
 
-  it('appendChild', () => {
+  it('append children', () => {
     const node = createNode(1);
     node.appendChild('f');
     expect(node.gender).toBe(1);
@@ -28,5 +28,18 @@ describe('node', () => {
     expect(nextNode.parentNodes.length).toBe(1);
     expect(nextNode.parentNodes[0].title).toBe('爸爸');
     expect(nextNode.childNodes).toEqual([]);
+  });
+  
+  it('append ethics children', () => {
+    const node = createNode(1);
+    node.appendChild('f');
+    node.appendChild('f');
+    node.appendChild('m');
+    node.appendChild('m');
+    node.appendChild('w');
+    node.appendChild('w');
+    node.appendChild('h');
+    node.appendChild('h');
+    expect(node.childNodes.length).toBe(4);
   });
 });
