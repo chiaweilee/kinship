@@ -10,14 +10,14 @@ interface Node {
   appendChild: (type: RelationType) => Node;
 }
 
-const createChildNode = (type: RelationType, fromRelation?: string): Node => {
+const createChildNode = (type: RelationType, parentNode: Node): Node => {
   const node: Node = {
     type,
-    title: getRelationshipFromChain(fromRelation, getRelationship(type)),
-    parentNodes: [],
+    title: getRelationshipFromChain(parentNode.title, getRelationship(type)),
+    parentNodes: [parentNode],
     childNodes: [],
     appendChild: (childType: RelationType) => {
-      node.childNodes.push(createChildNode(childType, node.title));
+      node.childNodes.push(createChildNode(childType, node));
       return node;
     },
   };
@@ -30,7 +30,7 @@ export const createNode = (gender: Gender): Node => {
     parentNodes: [],
     childNodes: [],
     appendChild: (type: RelationType) => {
-      node.childNodes.push(createChildNode(type));
+      node.childNodes.push(createChildNode(type, node));
       return node;
     },
   };

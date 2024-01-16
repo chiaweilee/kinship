@@ -17,14 +17,16 @@ describe('node', () => {
     const childNode = node.childNodes[0];
     expect(childNode.title).toBe('爸爸');
     expect(childNode.type).toBe('f');
-    expect(childNode.parentNodes).toEqual([]);
+    expect(childNode.parentNodes.length).toBe(1);
+    expect(childNode.parentNodes[0].gender).toBe(1);
     expect(childNode.childNodes).toEqual([]);
     childNode.appendChild('m');
     expect(childNode.childNodes.length).toBe(1);
     const nextNode = childNode.childNodes[0];
     expect(nextNode.title).toBe('奶奶');
     expect(nextNode.type).toBe('m');
-    expect(nextNode.parentNodes).toEqual([]);
+    expect(nextNode.parentNodes.length).toBe(1);
+    expect(nextNode.parentNodes[0].title).toBe('爸爸');
     expect(nextNode.childNodes).toEqual([]);
   });
 });
