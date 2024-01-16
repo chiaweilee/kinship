@@ -1,14 +1,6 @@
-import type { Gender, RelationType } from './shared';
+import type { Node, Gender, RelationType } from './shared';
 import { getRelationship, getRelationshipFromChain } from './relationship';
-
-interface Node {
-  gender?: Gender;
-  type?: RelationType;
-  title?: string;
-  parentNodes: any[];
-  childNodes: any[];
-  appendChild: (type: RelationType) => Node;
-}
+import { ethicsCheck } from './ethics';
 
 const createChildNode = (type: RelationType, parentNode: Node): Node => {
   const node: Node = {
@@ -17,6 +9,7 @@ const createChildNode = (type: RelationType, parentNode: Node): Node => {
     parentNodes: [parentNode],
     childNodes: [],
     appendChild: (childType: RelationType) => {
+      if (ethicsCheck(node, childType) === false) return node;
       node.childNodes.push(createChildNode(childType, node));
       return node;
     },
@@ -29,8 +22,9 @@ export const createNode = (gender: Gender): Node => {
     gender,
     parentNodes: [],
     childNodes: [],
-    appendChild: (type: RelationType) => {
-      node.childNodes.push(createChildNode(type, node));
+    appendChild: (childType: RelationType) => {
+      if (ethicsCheck(node, childType) === false) return node;
+      node.childNodes.push(createChildNode(childType, node));
       return node;
     },
   };
