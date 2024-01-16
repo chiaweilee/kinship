@@ -12,7 +12,8 @@
   "scripts": {
     "build:": "taro build --type weapp",
     "dev": "npm run build -- --watch",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "browserslist": [
     "last 3 versions",
