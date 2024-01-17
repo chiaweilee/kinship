@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@antv/f6-wx':
+    specifier: ^0.0.7
+    version: 0.0.7
   '@babel/runtime':
     specifier: ^7.21.5
     version: 7.23.8
@@ -159,6 +162,10 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.21
+
+  /@antv/f6-wx@0.0.7:
+    resolution: {integrity: sha512-Q6GKLAWBUZ1H74PpUAPPq+laP+DtdTKnIIeq6FCufVyHOgSlJSf+Jm6aPdASok+oNJvgUDcFWvZS9qLqyV/2TA==}
+    dev: false
 
   /@babel/code-frame@7.23.5:
     resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
