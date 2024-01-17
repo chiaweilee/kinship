@@ -4,6 +4,7 @@ describe('node', () => {
   it('create node', () => {
     const node = createNode(1);
     expect(node.gender).toBe(1);
+    expect(node.title).toBe('自己');
     expect(node.parentNodes).toEqual([]);
     expect(node.childNodes).toEqual([]);
   });

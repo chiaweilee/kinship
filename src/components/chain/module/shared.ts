@@ -6,5 +6,5 @@ export interface Node {
   childNodes: any[];
   appendChild: (type: RelationType) => Node;
 }
-export type RelationType = 'f' | 'm' | 'h' | 'w' | 's' | 'd' | 'ob' | 'lb' | 'os' | 'ls';
+export type RelationType = '' | 'f' | 'm' | 'h' | 'w' | 's' | 'd' | 'ob' | 'lb' | 'os' | 'ls';
 export type Gender = 1 | 0;

@@ -2,31 +2,30 @@ import type { Node, Gender, RelationType } from './shared';
 import { getRelationship, getRelationshipFromChain } from './relationship';
 import { ethicsCheck } from './ethics';
 
-const createChildNode = (type: RelationType, parentNode: Node): Node => {
-  const node: Node = {
-    type,
-    title: getRelationshipFromChain(parentNode.title, getRelationship(type)),
-    parentNodes: [parentNode],
-    childNodes: [],
-    appendChild: (childType: RelationType) => {
-      if (ethicsCheck(node, childType) === false) return node;
-      node.childNodes.push(createChildNode(childType, node));
-      return node;
-    },
+function BaseNode() {
+  this.parentNodes = [];
+  this.childNodes = [];
+  this.appendChild = function (childType: RelationType) {
+    if (ethicsCheck(this, childType)) {
+      this.childNodes.push(createChildNode(childType, this));
+    }
+    return this;
   };
+}
+
+const createChildNode = (type: RelationType, parentNode: Node): Node => {
+  const node = new BaseNode();
+  node.type = type;
+  node.parentNodes = [parentNode];
+  node.title = getRelationshipFromChain(parentNode.title, getRelationship(type));
   return node;
 };
 
-export const createNode = (gender: Gender): Node => {
-  const node: Node = {
-    gender,
-    parentNodes: [],
-    childNodes: [],
-    appendChild: (childType: RelationType) => {
-      if (ethicsCheck(node, childType) === false) return node;
-      node.childNodes.push(createChildNode(childType, node));
-      return node;
-    },
-  };
+const createNode = (gender: Gender): Node => {
+  const node = new BaseNode();
+  node.gender = gender;
+  node.title = getRelationship('');
   return node;
 };
+
+export { createNode };
