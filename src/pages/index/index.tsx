@@ -2,17 +2,17 @@ import { useState } from 'react';
 import { View } from '@tarojs/components';
 import { useLoad } from '@tarojs/taro';
 import F6 from '@antv/f6-wx/src/index';
+import { createNode } from '@/components/chain/module/node';
+import { convertNodeToData } from '@/components/chain/module/data';
 import './index.less';
 
-const data = {
-  nodes: Array.from(new Array(30)).map((_, i) => ({ id: `node${i}`, label: `node${i}` })),
-  edges: [
-    {
-      source: 'node1', // String，必须，起始点 id
-      target: 'node2', // String，必须，目标点 id
-    },
-  ],
-};
+const node = createNode(0);
+node.appendChild('f');
+node.appendChild('ob');
+node.appendChild('s');
+node.childNodes[0].appendChild('ob');
+node.childNodes[0].childNodes[0].appendChild('d');
+const data = convertNodeToData(node);
 
 export default function Index() {
   const [canvasWidth, $canvasWidth] = useState();
