@@ -3,6 +3,7 @@ import { getRelationship, getRelationshipFromChain } from './relationship';
 import { ethicsCheck } from './ethics';
 
 function BaseNode() {
+  this.label = '';
   this.parentNodes = [];
   this.childNodes = [];
   this.appendChild = function (childType: RelationType) {
@@ -17,14 +18,14 @@ const createChildNode = (type: RelationType, parentNode: Node): Node => {
   const node = new BaseNode();
   node.type = type;
   node.parentNodes = [parentNode];
-  node.title = getRelationshipFromChain(parentNode.title, getRelationship(type));
+  node.label = getRelationshipFromChain(parentNode.label, getRelationship(type));
   return node;
 };
 
 const createNode = (gender: Gender): Node => {
   const node = new BaseNode();
   node.gender = gender;
-  node.title = getRelationship('');
+  node.label = getRelationship('');
   return node;
 };
 

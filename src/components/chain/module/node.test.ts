@@ -4,7 +4,7 @@ describe('node', () => {
   it('create node', () => {
     const node = createNode(1);
     expect(node.gender).toBe(1);
-    expect(node.title).toBe('自己');
+    expect(node.label).toBe('自己');
     expect(node.parentNodes).toEqual([]);
     expect(node.childNodes).toEqual([]);
   });
@@ -16,7 +16,7 @@ describe('node', () => {
     expect(node.parentNodes).toEqual([]);
     expect(node.childNodes.length).toBe(1);
     const childNode = node.childNodes[0];
-    expect(childNode.title).toBe('爸爸');
+    expect(childNode.label).toBe('爸爸');
     expect(childNode.type).toBe('f');
     expect(childNode.parentNodes.length).toBe(1);
     expect(childNode.parentNodes[0].gender).toBe(1);
@@ -24,13 +24,13 @@ describe('node', () => {
     childNode.appendChild('m');
     expect(childNode.childNodes.length).toBe(1);
     const nextNode = childNode.childNodes[0];
-    expect(nextNode.title).toBe('奶奶');
+    expect(nextNode.label).toBe('奶奶');
     expect(nextNode.type).toBe('m');
     expect(nextNode.parentNodes.length).toBe(1);
-    expect(nextNode.parentNodes[0].title).toBe('爸爸');
+    expect(nextNode.parentNodes[0].label).toBe('爸爸');
     expect(nextNode.childNodes).toEqual([]);
   });
-  
+
   it('append ethics children', () => {
     const node = createNode(1);
     node.appendChild('f');
