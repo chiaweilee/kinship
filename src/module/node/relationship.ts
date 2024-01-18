@@ -1,4 +1,4 @@
-import relationship from 'relationship.js';
+import relationship from '../relationship/relationship';
 import type { RelationType } from './shared';
 
 const getRelationship = (type: RelationType) => {
