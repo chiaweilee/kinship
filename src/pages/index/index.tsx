@@ -61,7 +61,8 @@ export default function Index() {
         width={canvasWidth}
         height={canvasHeight}
         pixelRatio={canvasPixelRatio}
-        onInit={handleInit}
+        onOnInit={handleInit}
+        bindonInit
       />
     </View>
   );
