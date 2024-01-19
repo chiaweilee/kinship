@@ -31,16 +31,20 @@ describe('node', () => {
     expect(grandmotherNode.childNodes).toEqual([]);
   });
 
-  it('append ethics children', () => {
+  it('append existed children', () => {
     const node = createNode(1);
     node.appendChild('f');
-    node.appendChild('f');
-    node.appendChild('m');
-    node.appendChild('m');
-    node.appendChild('w');
-    node.appendChild('w');
-    node.appendChild('h');
-    node.appendChild('h');
+    const fatherNode = node.appendChild('f');
+    expect(node.childNodes.length).toBe(1);
+    expect(fatherNode).not.toBe(undefined);
+  });
+
+  it('append ethics children', () => {
+    const node = createNode(1);
+    node.appendChild('f').appendChild('f');
+    node.appendChild('m').appendChild('m').appendChild('m');
+    node.appendChild('w').appendChild('w').appendChild('w').appendChild('w');
+    node.appendChild('h').appendChild('h').appendChild('h').appendChild('h').appendChild('h');
     expect(node.childNodes.length).toBe(4);
   });
 });

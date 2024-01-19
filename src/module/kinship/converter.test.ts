@@ -5,7 +5,7 @@ describe('data', () => {
   it('convert single node to data', () => {
     const node = createNode(1);
     const data = convertNodeToData(node);
-    expect(data).toEqual({ edges: [], nodes: [{ id: '', label: '自己', seniority: 0 }] });
+    expect(data).toEqual({ edges: [], nodes: [{ id: '$', label: '自己', seniority: 0 }] });
   });
 
   it('convert nodes to data', () => {
@@ -19,28 +19,28 @@ describe('data', () => {
     expect(data).toEqual({
       edges: [
         {
-          source: '自己',
-          target: '爸爸',
+          source: '$',
+          target: 'f',
         },
         {
-          source: '自己',
-          target: '哥哥',
+          source: '$',
+          target: 'ob',
         },
         {
-          source: '自己',
-          target: '儿子',
+          source: '$',
+          target: 's',
         },
         {
-          source: '爸爸',
-          target: '伯父',
+          source: 'f',
+          target: 'f.ob',
         },
         {
-          source: '伯父',
-          target: '堂姐',
+          source: 'f.ob',
+          target: 'f.ob.d',
         },
       ],
       nodes: [
-        { id: '', label: '自己', seniority: 0 },
+        { id: '$', label: '自己', seniority: 0 },
         { id: 'f', label: '爸爸', seniority: 1 },
         { id: 'ob', label: '哥哥', seniority: 0 },
         { id: 's', label: '儿子', seniority: -1 },

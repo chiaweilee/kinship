@@ -10,6 +10,10 @@ function BaseNode() {
   this.parentNodes = [];
   this.childNodes = [];
   this.appendChild = function (childType: RelationType): Node | void {
+    // check is target node exist, then return directly.
+    const existNode = this.childNodes.find(({ type }) => type === childType);
+    if (!!existNode) return existNode;
+    // ethics check
     if (ethicsCheck(this, childType)) {
       const node = createChildNode(childType, this);
       this.childNodes.push(node);

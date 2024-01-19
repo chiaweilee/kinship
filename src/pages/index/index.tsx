@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { View } from '@tarojs/components';
 import { useLoad } from '@tarojs/taro';
-import F6 from '@antv/f6-wx/src/index';
-import { createNode, convertNodeToData } from '@/module/kinship';
-import { graphBaseConfig } from '@/constants';
+import { init } from '@/module/f6';
 import './index.less';
 
 export default function Index() {
@@ -20,25 +18,12 @@ export default function Index() {
 
   const handleInit = (event) => {
     const { ctx, renderer } = event.detail;
-    const graph = new F6.Graph({
-      container: null,
-      renderer: renderer,
-      context: ctx,
+    init({
+      ctx,
+      renderer,
       width: canvasWidth * canvasPixelRatio,
       height: canvasHeight * canvasPixelRatio,
-      ...graphBaseConfig,
     });
-
-    const node = createNode(0);
-    const fatherNode = node.appendChild('f');
-    node.appendChild('ob');
-    node.appendChild('s');
-    const uncleNode = fatherNode.appendChild('ob');
-    uncleNode.appendChild('d');
-    const data = convertNodeToData(node);
-
-    graph.data(data); // 读取 Step 2 中的数据源到图上
-    graph.render(); // 渲染图
   };
 
   return (
