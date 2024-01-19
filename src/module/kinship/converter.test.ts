@@ -10,11 +10,11 @@ describe('data', () => {
 
   it('convert nodes to data', () => {
     const node = createNode(1);
-    node.appendChild('f');
+    const fatherNode = node.appendChild('f');
     node.appendChild('ob');
     node.appendChild('s');
-    node.childNodes[0].appendChild('ob');
-    node.childNodes[0].childNodes[0].appendChild('d');
+    const uncleNode = fatherNode.appendChild('ob');
+    uncleNode.appendChild('d');
     const data = convertNodeToData(node);
     expect(data).toEqual({
       edges: [

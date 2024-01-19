@@ -8,11 +8,12 @@ function BaseNode() {
   this.seniority = 0;
   this.parentNodes = [];
   this.childNodes = [];
-  this.appendChild = function (childType: RelationType) {
+  this.appendChild = function (childType: RelationType): Node | void {
     if (ethicsCheck(this, childType)) {
-      this.childNodes.push(createChildNode(childType, this));
+      const node = createChildNode(childType, this);
+      this.childNodes.push(node);
+      return node;
     }
-    return this;
   };
 }
 
