@@ -1,4 +1,5 @@
 export interface Node {
+  id: string;
   gender?: Gender;
   type: RelationType;
   label: string;

@@ -4,6 +4,7 @@ import { getRelationSeniority } from './seniority';
 import { ethicsCheck } from './ethics';
 
 function BaseNode() {
+  this.id = '';
   this.type = '';
   this.seniority = 0;
   this.parentNodes = [];
@@ -19,6 +20,7 @@ function BaseNode() {
 
 const createChildNode = (type: RelationType, parentNode: Node): Node => {
   const node = new BaseNode() as Node;
+  node.id = [parentNode.id, type].filter(Boolean).join('.');
   node.type = type;
   node.parentNodes = [parentNode];
   node.label = getRelationshipFromChain(parentNode.label, getRelationship(type));

@@ -44,8 +44,8 @@ describe('data', () => {
         { id: 'f', label: '爸爸', seniority: 1 },
         { id: 'ob', label: '哥哥', seniority: 0 },
         { id: 's', label: '儿子', seniority: -1 },
-        { id: 'ob', label: '伯父', seniority: 1 },
-        { id: 'd', label: '堂姐', seniority: 0 },
+        { id: 'f.ob', label: '伯父', seniority: 1 },
+        { id: 'f.ob.d', label: '堂姐', seniority: 0 },
       ],
     });
   });
