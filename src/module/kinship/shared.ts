@@ -1,7 +1,8 @@
 export interface Node {
   gender?: Gender;
-  type?: RelationType;
+  type: RelationType;
   label: string;
+  seniority: number;
   parentNodes: any[];
   childNodes: any[];
   appendChild: (type: RelationType) => Node;
@@ -10,6 +11,7 @@ export interface Node {
 export type DataNodes = Array<{
   id: string;
   label: string;
+  seniority: number;
 }>;
 
 export type DataEdges = Array<{

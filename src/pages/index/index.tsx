@@ -43,7 +43,7 @@ export default function Index() {
 
   return (
     <View>
-      {/*@ts-ignore */}
+      {/* @ts-ignore */}
       <f6-canvas
         width={canvasWidth}
         height={canvasHeight}

@@ -1,5 +1,5 @@
 import { createNode } from './node';
-import { convertNodeToData } from './data';
+import { convertNodeToData } from './converter';
 
 export {
   createNode,
