@@ -1,4 +1,5 @@
 export const graphBaseConfig = {
+  fitView: true,
   defaultNode: {
     type: 'rect',
     size: 50,
@@ -16,10 +17,13 @@ export const graphBaseConfig = {
     },
   },
   defaultEdge: {
-    type: 'hvh',
+    // type: 'hvh',
     style: {
       endArrow: true,
       startArrow: false,
     },
   },
+  defaultCombo: {
+    type: 'rect',
+  }
 };

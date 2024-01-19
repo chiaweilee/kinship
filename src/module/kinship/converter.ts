@@ -5,20 +5,31 @@ function getId(id: string) {
 }
 
 function convertNodeToData(node: Node): Data {
-  const data = { nodes: [] as DataNodes, edges: [] as DataEdges };
+  const nodes: DataNodes = [];
+  const edges: DataEdges = [];
+  const combos = new Set();
   const stack = [node] as Node[];
   while (stack.length > 0) {
     const { id: rawId, label, childNodes, seniority } = stack.shift() as Node;
     const id = getId(rawId);
-    data.nodes.push({ label, id, seniority });
+    // create combos
+    const comboId = String(seniority);
+    if (combos[seniority] === undefined) combos.add(comboId);
+    // create nodes
+    nodes.push({ label, id, comboId });
+    // create edges
     if (childNodes?.length > 0) {
       childNodes.forEach((child) => {
-        data.edges.push({ source: id, target: child.id });
+        edges.push({ source: id, target: child.id });
         stack.push(child);
       });
     }
   }
-  return data;
+  return {
+    nodes,
+    edges,
+    combos: [...combos].map((id) => ({ id })),
+  };
 }
 
 export { convertNodeToData };

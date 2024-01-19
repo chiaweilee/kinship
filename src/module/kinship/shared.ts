@@ -12,7 +12,7 @@ export interface Node {
 export type DataNodes = Array<{
   id: string;
   label: string;
-  seniority: number;
+  comboId: string;
 }>;
 
 export type DataEdges = Array<{
@@ -23,6 +23,7 @@ export type DataEdges = Array<{
 export interface Data {
   nodes: DataNodes;
   edges: DataEdges;
+  combos: any;
 }
 
 export type RelationType = '' | 'f' | 'm' | 'h' | 'w' | 's' | 'd' | 'ob' | 'lb' | 'os' | 'ls';
