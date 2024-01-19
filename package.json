@@ -38,6 +38,7 @@
     "@tarojs/runtime": "3.6.22",
     "@tarojs/shared": "3.6.22",
     "@tarojs/taro": "3.6.22",
+    "preact": "^10.19.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

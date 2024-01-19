@@ -19,7 +19,7 @@ dependencies:
     version: 3.6.22
   '@tarojs/plugin-framework-react':
     specifier: 3.6.22
-    version: 3.6.22(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.48)(postcss@8.4.33)(react-refresh@0.11.0)(react@18.2.0)
+    version: 3.6.22(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.48)(postcss@8.4.33)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
   '@tarojs/plugin-platform-alipay':
     specifier: 3.6.22
     version: 3.6.22(@types/react@18.2.48)(postcss@8.4.33)(react@18.2.0)
@@ -53,15 +53,15 @@ dependencies:
   '@tarojs/taro':
     specifier: 3.6.22
     version: 3.6.22(@types/react@18.2.48)(postcss@8.4.33)
+  preact:
+    specifier: ^10.19.3
+    version: 10.19.3
   react:
     specifier: ^18.0.0
     version: 18.2.0
   react-dom:
     specifier: ^18.0.0
     version: 18.2.0(react@18.2.0)
-  relationship.js:
-    specifier: ^1.2.4
-    version: 1.2.4
 
 devDependencies:
   '@babel/core':
@@ -2717,7 +2717,7 @@ packages:
       - supports-color
     dev: true
 
-  /@tarojs/plugin-framework-react@3.6.22(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.48)(postcss@8.4.33)(react-refresh@0.11.0)(react@18.2.0):
+  /@tarojs/plugin-framework-react@3.6.22(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.48)(postcss@8.4.33)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0):
     resolution: {integrity: sha512-C0zisUrKTVfF305sFOZjQi6Yxh7UYhhiETv9eRuLwVQvm5ZCkscBcqQC/hFygTT9m6Ex7wqaCpCpRh6+CASw2Q==}
     peerDependencies:
       '@pmmmwh/react-refresh-webpack-plugin': '*'
@@ -2745,6 +2745,7 @@ packages:
       acorn: 8.11.3
       acorn-walk: 8.3.2
       lodash: 4.17.21
+      preact: 10.19.3
       react: 18.2.0
       react-refresh: 0.11.0
     transitivePeerDependencies:
@@ -3034,7 +3035,7 @@ packages:
       '@babel/runtime': 7.23.8
       '@tarojs/components': 3.6.22(@types/react@18.2.48)(postcss@8.4.33)(react@18.2.0)
       '@tarojs/helper': 3.6.22
-      '@tarojs/plugin-framework-react': 3.6.22(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.48)(postcss@8.4.33)(react-refresh@0.11.0)(react@18.2.0)
+      '@tarojs/plugin-framework-react': 3.6.22(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@types/react@18.2.48)(postcss@8.4.33)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-h5': 3.6.22(@types/react@18.2.48)(postcss@8.4.33)
       '@tarojs/react': 3.6.22(react@18.2.0)
       '@tarojs/runtime': 3.6.22
@@ -10890,6 +10891,9 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  /preact@10.19.3:
+    resolution: {integrity: sha512-nHHTeFVBTHRGxJXKkKu5hT8C/YWBkPso4/Gad6xuj5dbptt9iF9NZr9pHbPhBrnT2klheu7mHTxTZ/LjwJiEiQ==}
+
   /preferred-pm@3.1.2:
     resolution: {integrity: sha512-nk7dKrcW8hfCZ4H6klWcdRknBOXWzNQByJ0oJyX97BOupsYD+FzLS4hflgEu/uPUEHZCuRfMxzCBsuWd7OzT8Q==}
     engines: {node: '>=10'}
@@ -11304,10 +11308,6 @@ packages:
     resolution: {integrity: sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==}
     engines: {node: '>= 0.10'}
     dev: true
-
-  /relationship.js@1.2.4:
-    resolution: {integrity: sha512-6HTLFGBz4a1PZxPMIg3gPZ8SNak3zAK6UDZytjtyfkCeBXBf+eCymLbfgJieJtLbzUmLCxIm4xdYYQ/FxZxqTw==}
-    dev: false
 
   /renderkid@3.0.0:
     resolution: {integrity: sha512-q/7VIQA8lmM1hF+jn+sFSPWGlMkSAeNYcPLmDQx2zzuiDfaLrOmumR8iaUKlenFgh0XRPIUeSPlH3A+AW3Z5pg==}

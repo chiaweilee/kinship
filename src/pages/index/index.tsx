@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View } from '@tarojs/components';
 import { useLoad } from '@tarojs/taro';
 import F6 from '@antv/f6-wx/src/index';
-import { createNode, convertNodeToData } from '@/module/node';
+import { createNode, convertNodeToData } from '@/module/kinship';
 import { graphBaseConfig } from '@/constants';
 import './index.less';
 
