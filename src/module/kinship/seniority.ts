@@ -13,8 +13,8 @@ function getSeniorityGain(type: RelationType): -1 | 1 | 0 {
   }
 }
 
-function getRelationSeniority(level: number, type: RelationType): number {
-  return level + getSeniorityGain(type);
+function getRelationSeniority(inherit: number, type: RelationType): number {
+  return inherit + getSeniorityGain(type);
 }
 
 export { getRelationSeniority };
