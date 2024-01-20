@@ -1,5 +1,7 @@
-import relationship from '../relationship.js';
-import type { RelationType } from './shared';
+import relationship from './relationship.dist.js';
+import type { RelationType } from '../kinship/shared.js';
+
+relationship.setMode('default', {});
 
 const getRelationship = (type: RelationType) => {
   return relationship.data?.[type]?.[0];

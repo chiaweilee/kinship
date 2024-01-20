@@ -16,9 +16,9 @@ function getX(rawX: number) {
 function getOrder(seniority: string) {
   switch (seniority) {
     case '-2':
-      return ['m.f', 'm.m', 'f.f', 'f.m'];
+      return ['f.f', 'f.m', 'm.f', 'm.m'];
     case '-1':
-      return ['m.os', 'm.ls', 'm.ob', 'm.lb', 'm', 'f', 'f.ob', 'f.lb', 'f.os', 'f.ls'];
+      return ['f.ls', 'f.os', 'f.lb', 'f.ob', 'f', 'm', 'm.ob', 'm.lb', 'm.os', 'm.ls'];
     case '0':
       return ['lb', 'ob', '$', 'os', 'ls'];
     case '1':

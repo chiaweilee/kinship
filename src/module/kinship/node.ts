@@ -1,5 +1,5 @@
 import type { Node, Gender, RelationType } from './shared';
-import { getRelationship, getRelationshipFromChain } from './relationship';
+import { getRelationship, getRelationshipFromChain } from '../relationship/relationship';
 import { getRelationSeniority } from './seniority';
 import { ethicsCheck } from './ethics';
 
