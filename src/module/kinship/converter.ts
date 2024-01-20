@@ -4,6 +4,10 @@ function getId(id: string) {
   return id || '$';
 }
 
+function getY(seniority: number) {
+  return seniority * 200;
+}
+
 function convertNodeToData(node: Node): Data {
   const nodes: DataNodes = [];
   const edges: DataEdges = [];
@@ -16,7 +20,7 @@ function convertNodeToData(node: Node): Data {
     const comboId = String(seniority);
     if (combos[seniority] === undefined) combos.add(comboId);
     // create nodes
-    nodes.push({ label, id, comboId });
+    nodes.push({ label, id, comboId, y: getY(seniority) });
     // create edges
     if (childNodes?.length > 0) {
       childNodes.forEach((child) => {

@@ -18,12 +18,12 @@ describe('node', () => {
     const fatherNode = node.appendChild('f');
     expect(fatherNode.label).toBe('爸爸');
     expect(fatherNode.type).toBe('f');
-    expect(fatherNode.seniority).toBe(1);
+    expect(fatherNode.seniority).toBe(-1);
     expect(fatherNode.parentNodes.length).toBe(1);
     expect(fatherNode.parentNodes[0].gender).toBe(1);
     expect(fatherNode.childNodes).toEqual([]);
     const grandmotherNode = fatherNode.appendChild('m');
-    expect(grandmotherNode.seniority).toBe(2);
+    expect(grandmotherNode.seniority).toBe(-2);
     expect(grandmotherNode.label).toBe('奶奶');
     expect(grandmotherNode.type).toBe('m');
     expect(grandmotherNode.parentNodes.length).toBe(1);

@@ -13,6 +13,8 @@ export type DataNodes = Array<{
   id: string;
   label: string;
   comboId: string;
+  x?: number;
+  y?: number;
 }>;
 
 export type DataEdges = Array<{
