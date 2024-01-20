@@ -15,6 +15,8 @@ export type DataNodes = Array<{
   comboId: string;
   x?: number;
   y?: number;
+  style?: object;
+  size?: number | [number, number];
 }>;
 
 export type DataEdges = Array<{
@@ -22,10 +24,14 @@ export type DataEdges = Array<{
   target: string;
 }>;
 
+export type DataCombos = Array<{
+  id: string;
+}>;
+
 export interface Data {
   nodes: DataNodes;
   edges: DataEdges;
-  combos: any;
+  combos: DataCombos;
 }
 
 export type RelationType = '' | 'f' | 'm' | 'h' | 'w' | 's' | 'd' | 'ob' | 'lb' | 'os' | 'ls';
