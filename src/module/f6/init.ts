@@ -1,5 +1,5 @@
 import F6 from '@antv/f6-wx/src/index';
-import data from './data'
+import data from './data';
 import { graphBaseConfig } from './constants';
 
 function init({ ctx, renderer, width, height }) {
@@ -12,8 +12,8 @@ function init({ ctx, renderer, width, height }) {
     ...graphBaseConfig,
   });
 
-  graph.data(data); // 读取 Step 2 中的数据源到图上
-  graph.render(); // 渲染图
+  graph.data(data);
+  graph.render();
 }
 
 export { init };

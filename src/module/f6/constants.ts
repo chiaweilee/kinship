@@ -17,7 +17,7 @@ export const graphBaseConfig = {
     },
   },
   defaultEdge: {
-    // type: 'hvh',
+    type: 'line',
     style: {
       endArrow: true,
       startArrow: false,
@@ -25,5 +25,8 @@ export const graphBaseConfig = {
   },
   defaultCombo: {
     type: 'rect',
-  }
+    style: {
+      lineWidth: 0,
+    },
+  },
 };

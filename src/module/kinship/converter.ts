@@ -10,7 +10,7 @@ function getY(seniority: number) {
 }
 
 function getX(rawX: number) {
-  return rawX * 50;
+  return rawX * 60;
 }
 
 function getOrder(seniority: string) {
@@ -79,6 +79,10 @@ function convertNodeToData(node: Node): Data {
       id,
       comboId: seniority,
       y: getY(seniority),
+      anchorPoints: [
+        [0, 1], // 0 -> seniority -1
+        [0.5, 1], // 1 -> seniority 1
+      ],
     });
     // create edges
     if (childNodes?.length > 0) {
