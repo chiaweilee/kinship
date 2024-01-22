@@ -14,6 +14,8 @@ function init({ ctx, renderer, width, height }) {
 
   graph.data(data);
   graph.render();
+
+  return graph;
 }
 
 export { init };

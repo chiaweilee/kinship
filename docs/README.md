@@ -1,7 +1,26 @@
-### Double Linked List
+## Developer Log
+
+### Design
+
+#### Double Linked List
 
 ![double_linked_list](https://github.com/chiaweilee/kinship/assets/29817353/d0d5e192-8c28-4782-bb41-05872f7c7b55)
 
-### Bubbling
+#### Bubbling
 
 ![bubbling](https://github.com/chiaweilee/kinship/assets/29817353/629a323b-b242-4ac4-a483-56655e30f8c8)
+
+### Problems between Taro and AntV F6
+
+#### onInit
+
+Don't use `onInit`, use `onOnInit` and `bindonInit` instead.
+
+```jsx
+<f6-canvas onOnInit={handleInit} bindonInit />
+```
+
+related docs:
+
+- https://f6.antv.vision/zh/docs/manual/tutorial/mini/wechat
+- https://taro-docs.jd.com/docs/hybrid#react

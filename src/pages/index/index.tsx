@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { View } from '@tarojs/components';
-import { useLoad } from '@tarojs/taro';
+import { useLoad, useUnload } from '@tarojs/taro';
 import { init } from '@/module/f6';
 import './index.less';
 
 export default function Index() {
+  const [graph, $graph] = useState(null) as any;
   const [canvasWidth, $canvasWidth] = useState(0);
   const [canvasHeight, $canvasHeight] = useState(0);
   const [canvasPixelRatio, $canvasPixelRatio] = useState(0);
@@ -16,14 +17,24 @@ export default function Index() {
     $canvasPixelRatio(pixelRatio);
   });
 
+  useUnload(() => {
+    graph?.destroy()
+  })
+
   const handleInit = (event) => {
     const { ctx, renderer } = event.detail;
-    init({
-      ctx,
-      renderer,
-      width: canvasWidth * canvasPixelRatio,
-      height: canvasHeight * canvasPixelRatio,
-    });
+    $graph(
+      init({
+        ctx,
+        renderer,
+        width: canvasWidth * canvasPixelRatio,
+        height: canvasHeight * canvasPixelRatio,
+      })
+    );
+  };
+
+  const handleTouch = (event) => {
+    graph?.emitEvent(event.detail);
   };
 
   return (
@@ -35,6 +46,8 @@ export default function Index() {
         pixelRatio={canvasPixelRatio}
         onOnInit={handleInit}
         bindonInit
+        onOnTouchEvent={handleTouch}
+        bindonTouchEvent
       />
     </View>
   );
