@@ -12,12 +12,12 @@
 
 ### Problems between Taro and AntV F6
 
-#### onInit
+#### Bind Event
 
-Don't use `onInit`, use `onOnInit` and `bindonInit` instead.
+Don't use `onInit`, use `onOnInit` and `bindonInit` instead. So was `onTouchEvent`.
 
 ```jsx
-<f6-canvas onOnInit={handleInit} bindonInit />
+<f6-canvas onOnInit={handleInit} bindonInit onOnTouchEvent={handleTouch} bindonTouchEvent />
 ```
 
 related docs:

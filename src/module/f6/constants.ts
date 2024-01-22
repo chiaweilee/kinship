@@ -1,7 +1,19 @@
 export const graphBaseConfig = {
   fitView: true,
   modes: {
-    default: ['drag-canvas', 'click-select', 'zoom-canvas'],
+    default: [
+      {
+        type: 'click-select',
+        shouldBegin: (e) => {
+          console.log('shouldBegin', e);
+          return true;
+        },
+        shouldUpdate: (e) => {
+          console.log('shouldUpdate', e);
+          return true;
+        },
+      },
+    ],
   },
   defaultNode: {
     type: 'rect',
@@ -29,7 +41,7 @@ export const graphBaseConfig = {
   defaultCombo: {
     type: 'rect',
     style: {
-      lineWidth: 0,
+      // lineWidth: 0,
     },
   },
 };

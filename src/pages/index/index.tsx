@@ -22,11 +22,9 @@ export default function Index() {
   });
 
   const handleInit = (event) => {
-    const { ctx, renderer } = event.detail;
     $graph(
       init({
-        ctx,
-        renderer,
+        ...event.detail,
         width: canvasWidth * canvasPixelRatio,
         height: canvasHeight * canvasPixelRatio,
       })
