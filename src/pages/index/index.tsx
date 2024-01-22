@@ -18,8 +18,8 @@ export default function Index() {
   });
 
   useUnload(() => {
-    graph?.destroy()
-  })
+    graph?.destroy();
+  });
 
   const handleInit = (event) => {
     const { ctx, renderer } = event.detail;

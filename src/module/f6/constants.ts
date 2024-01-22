@@ -1,5 +1,8 @@
 export const graphBaseConfig = {
   fitView: true,
+  modes: {
+    default: ['drag-canvas', 'click-select', 'zoom-canvas'],
+  },
   defaultNode: {
     type: 'rect',
     size: 50,
