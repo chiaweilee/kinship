@@ -1,0 +1,19 @@
+{
+  "name": "@a/kinmap",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "miniprogram": "dist",
+  "scripts": {
+    "build": "father build",
+    "dev": "father dev"
+  },
+  "dependencies": {
+    "relationship.js": "^1.2.4"
+  },
+  "peerDependencies": {
+    "@antv/f6-wx": "^0.0.7"
+  },
+  "devDependencies": {
+    "@types/relationship.js": "^1.2.0"
+  }
+}

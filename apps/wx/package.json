@@ -1,0 +1,8 @@
+{
+  "name": "kinship-miniprogram",
+  "version": "1.0.0",
+  "dependencies": {
+    "@a/kinmap": "workspace:*",
+    "@antv/f6-wx": "^0.0.7"
+  }
+}
