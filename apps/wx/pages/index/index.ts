@@ -1,4 +1,5 @@
-import { init } from '@a/kinmap';
+import F6 from '@antv/f6-wx'
+import { init } from '@a/kinship';
 
 Page({
   graph: null,
@@ -21,7 +22,7 @@ Page({
 
   handleCanvasInit(event) {
     const { canvasWidth, canvasHeight, canvasPixelRatio } = this.data;
-    init({
+    init(F6, {
       ...event.detail,
       width: canvasWidth * canvasPixelRatio,
       height: canvasHeight * canvasPixelRatio,

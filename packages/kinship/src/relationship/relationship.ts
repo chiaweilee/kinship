@@ -1,4 +1,5 @@
-import relationship from 'relationship.js';
+// @ts-ignore
+import relationship from './relationship.dist.js';
 import type { RelationType } from '../kinship/shared.js';
 
 relationship.setMode('default', {});
