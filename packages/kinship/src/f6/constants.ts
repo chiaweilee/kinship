@@ -4,6 +4,7 @@ export const graphBaseConfig = {
     default: [
       {
         type: 'click-select',
+        multiple: false,
         shouldBegin: (e) => {
           console.log('shouldBegin', e);
           return true;

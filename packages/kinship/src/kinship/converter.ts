@@ -1,5 +1,5 @@
 import { orderBy } from '../utils';
-import type { Node, Data, DataNodes, DataEdges, DataCombos, RelationType } from './shared';
+import type { Node, Data, DataNodes, DataEdges, /*, DataCombos*/ RelationType } from './shared';
 
 function getId(id: string) {
   return id || '$';
@@ -48,11 +48,11 @@ function getProps(type: RelationType): any {
   }
 }
 
-function getCombos(combos): DataCombos {
-  return Object.keys(combos).map((id) => ({ id }));
-}
+// function getCombos(combos): DataCombos {
+//   return Object.keys(combos).map((id) => ({ id }));
+// }
 
-function getNodes(combos): DataNodes {
+function getNodes(combos: any): DataNodes {
   const nodes: DataNodes = [];
   for (const seniority in combos) {
     const combo = combos[seniority];
@@ -77,7 +77,7 @@ function convertNodeToData(node: Node): Data {
       ...getProps(type),
       label,
       id,
-      comboId: seniority,
+      // comboId: seniority,
       y: getY(seniority),
       anchorPoints: [
         [0, 1], // 0 -> seniority -1
@@ -95,7 +95,7 @@ function convertNodeToData(node: Node): Data {
   return {
     nodes: getNodes(combos),
     edges,
-    combos: getCombos(combos),
+    // combos: getCombos(combos),
   };
 }
 

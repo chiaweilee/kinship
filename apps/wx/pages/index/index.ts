@@ -1,18 +1,19 @@
+// @ts-ignore
 import F6 from '@antv/f6-wx'
+// @ts-ignore
 import { init } from '@a/kinship';
 
 Page({
-  graph: null,
+  graph: null as any,
 
   data: {
-    width: 0,
-    height: 0,
+    canvasWidth: 0,
+    canvasHeight: 0,
     pixelRatio: 1,
   },
 
   onLoad() {
     const { windowWidth, windowHeight, pixelRatio } = wx.getSystemInfoSync();
-
     this.setData({
       canvasWidth: windowWidth,
       canvasHeight: windowHeight,
@@ -20,13 +21,14 @@ Page({
     });
   },
 
-  handleCanvasInit(event) {
-    const { canvasWidth, canvasHeight, canvasPixelRatio } = this.data;
-    init(F6, {
+  handleCanvasInit(event: any) {
+    const { canvasWidth, canvasHeight, pixelRatio } = this.data as any;
+    this.graph = init(F6, {
       ...event.detail,
-      width: canvasWidth * canvasPixelRatio,
-      height: canvasHeight * canvasPixelRatio,
-    })
+      width: canvasWidth,
+      height: canvasHeight,
+      pixelRatio,
+    });
   },
 
   handleTouch(e) {

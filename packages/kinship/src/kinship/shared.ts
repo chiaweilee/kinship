@@ -31,7 +31,7 @@ export type DataCombos = Array<{
 export interface Data {
   nodes: DataNodes;
   edges: DataEdges;
-  combos: DataCombos;
+  combos?: DataCombos;
 }
 
 export type RelationType = '' | 'f' | 'm' | 'h' | 'w' | 's' | 'd' | 'ob' | 'lb' | 'os' | 'ls';
